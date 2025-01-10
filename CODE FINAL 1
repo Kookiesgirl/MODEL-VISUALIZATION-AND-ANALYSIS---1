@@ -1,0 +1,71 @@
+CODE TASK 1
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decision Tree Visualization</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .chart {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Decision Tree Visualization</h1>
+        <div class="chart">
+            <img src="tree_visualization.png" alt="Decision Tree">
+        </div>
+        <h2>Decision Tree Rules</h2>
+        <pre id="tree-rules">
+            <!-- Decision Tree Rules will be dynamically inserted here -->
+        </pre>
+        <h2>Model Evaluation</h2>
+        <p id="accuracy">Model Accuracy: <!-- Accuracy will be dynamically inserted here -->%</p>
+        <h2>Prediction</h2>
+        <p id="prediction">Predicted Class for Sample: <!-- Prediction will be dynamically inserted here --> </p>
+    </div>
+    <script>
+        // Example: Dynamically inserting content (Replace with actual server-generated data)
+        const treeRules = `|--- feature_3 <= 0.80
+|   |--- class: setosa
+|--- feature_3 >  0.80
+|   |--- feature_2 <= 4.75
+|   |   |--- class: versicolor
+|   |--- feature_2 >  4.75
+|   |   |--- class: virginica`;
+
+        const accuracy = 95.33; // Replace with actual accuracy value
+        const prediction = "setosa"; // Replace with actual prediction
+
+        document.getElementById("tree-rules").textContent = treeRules;
+        document.getElementById("accuracy").textContent = `Model Accuracy: ${accuracy}%`;
+        document.getElementById("prediction").textContent = `Predicted Class for Sample: ${prediction}`;
+    </script>
+</body>
+</html>
